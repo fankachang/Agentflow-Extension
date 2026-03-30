@@ -12,7 +12,12 @@
   "main": "./out/extension.js",
   "contributes": {
     "languages": [{ "id": "javascript" }],
-    "commands": []
+    "commands": [
+      {
+        "command": "agentflow.formatDocument",
+        "title": "Agentflow: Format Document"
+      }
+    ]
   },
   "scripts": {
     "compile": "tsc -p ./",

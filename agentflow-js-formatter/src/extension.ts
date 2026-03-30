@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { DocumentFormatter } from './formatter/documentFormatter';
+import { formatDocumentHandler } from './commands/formatDocument';
 
 const documentFormatter = new DocumentFormatter();
 
@@ -41,7 +42,12 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   );
 
-  context.subscriptions.push(provider);
+  const formatCommand = vscode.commands.registerCommand(
+    'agentflow.formatDocument',
+    formatDocumentHandler
+  );
+
+  context.subscriptions.push(provider, formatCommand);
 }
 
 export function deactivate(): void {}
