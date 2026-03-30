@@ -70,11 +70,17 @@ npm test
 # 安裝打包工具（若尚未安裝）
 npm install -g @vscode/vsce
 
-# 打包（自動執行 npm run compile）
-vsce package
+# 打包（使用 npm script，自動帶 --allow-missing-repository）
+npm run package
 
-# 產出：agentflow-<version>.vsix（位於專案根目錄）
+# 或直接執行
+vsce package --allow-missing-repository
 ```
+
+**打包產物**：`agentflow-js-formatter/agentflow-js-formatter-0.1.0.vsix`（約 2.12 MB，含 prettier）
+
+> 打包內容包含：`out/src/`（編譯後的外掛程式碼）、`node_modules/prettier/`（格式化引擎）、`package.json`；  
+> 不含：`src/`、`test/`、`tsconfig.json` 等開發專用檔案。
 
 ---
 
