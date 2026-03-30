@@ -1,0 +1,9 @@
+src/**
+test/**
+tsconfig.json
+.vscode-test/**
+node_modules/@vscode/vsce
+node_modules/@vscode/test-electron
+**/*.ts
+**/*.map
+!out/**
